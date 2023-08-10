@@ -1,5 +1,11 @@
 <?php
 
+/*
+ * Avoid tight coupling between the creator and concrete products
+ * SRP - can move product creation code into one place in the program, making the code easier to support
+ * Open/Closed Principle - can introduce new types of products into the program without breaking existing client code
+*/
+
 /* Factory and car interfaces */
 
 interface CarFactory
@@ -34,4 +40,4 @@ class Sedan implements Car
 
 $factory = new SedanFactory();
 $car = $factory->makeCar();
-print $car->getType();
+echo $car->getType();
